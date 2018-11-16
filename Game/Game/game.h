@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <map>
 
+// the game class
 class game {
 public:
 	explicit game();

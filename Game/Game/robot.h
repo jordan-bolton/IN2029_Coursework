@@ -4,11 +4,15 @@
 // includes to be used in the function declarations
 #include <string>
 
-
+// the robot class
 class robot {
-	// the robot name stored in a string
+	// the robot name stored in a string and the variables used to hold the robot's position and distance travelled
 	std::string n;
-
+	int _travelled;
+	int _originX = 0;
+	int _originY = 0;
+	int _x;
+	int _y;
 // public methods
 public:
 	explicit robot(const std::string &n);

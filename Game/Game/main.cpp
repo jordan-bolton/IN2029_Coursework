@@ -47,20 +47,54 @@ int main() {
 	// teating for game.cpp
 
 	game g;
-	g.add_robot("robot1");
 
-	cout << "Number of robots before move: " << g.num_robots() << '\n';
+	g.move("robot1", 2);
+	g.move("robot1", 2);
+	g.move("robot1", 3);
+	for (int i = 0; i < 5; ++i) {
+		g.move("robot1", 0);
+	}
 
-	g.move("robot1", 0); // move north
-	g.move("robot1", 2); // move south
 	
 	// move a robot that doesn't exist yet
-	g.add_robot("robot2");
-	g.move("robot2", 0);
+	g.move("robot2", 2);
+	for (int i = 0; i < 10; ++i) {
+		g.move("robot2", 2);
+	}
+
+
+
+	g.add_robot("robot3");
+	g.move("robot3", 3);
+	g.move("robot3", 3);
+	
+	g.move("robot4", 0);
+	g.move("robot4", 1);
+	g.move("robot4", 2);
+	g.move("robot4", 3);
+	g.move("robot4", 0);
+	g.move("robot4", 0);
+	g.move("robot4", 0);
+
+	g.add_robot("robot5");
+
 
 	cout << "Number of robots after move: " << g.num_robots() << '\n';
 
 	g.print_all();
+
+	cout << "num close: " << g.num_close() << '\n';
+	cout << "maximum distance: " << g.max_distance() << '\n';
+	cout << "furthest robot name: " << g.furthest() << '\n';
+
+	vector<robot> sortedRobots = g.robots_by_travelled();
+
+	
+	for (auto i = sortedRobots.begin(); i != sortedRobots.end(); ++i) {
+		cout << i->name() << '\n';
+	}
+	
+
 
 	return 0;
 }
