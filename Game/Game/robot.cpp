@@ -1,8 +1,6 @@
 #include "robot.h"
 #include <string>
 #include <cstdlib>
-// for testing
-#include <iostream>
 using namespace std;
 
 
@@ -17,29 +15,21 @@ robot::robot(const string &n) : n(n) {
 void robot::move_north() {
 	_y += 1;
 	++_travelled;
-	// for testing
-	cout << name() << " " << "moved north \n";
 }
 
 void robot::move_east() {
 	_x += 1;
 	++_travelled;
-	// for testing
-	cout << name() << " " << "moved east \n";
 }
 
 void robot::move_south() {
 	_y -= 1;
 	++_travelled;
-	// for testing
-	cout << name() << " " << "moved south \n";
 }
 
 void robot::move_west() {
 	_x -= 1;
 	++_travelled;
-	// for testing
-	cout << name() << " " << "moved west \n";
 }
 
 // returns how far north or south (represented by a negative number) the robot has moved

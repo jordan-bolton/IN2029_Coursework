@@ -4,8 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-// for testing
-#include <iostream>
+
 
 using namespace std;
 
@@ -14,21 +13,6 @@ map<const string, robot> robots;
 
 // default constructor with no paramaters
 game::game() {};
-
-// TESTING FUNCTIONS
-void game::add_robot(string name) {
-	robots.insert(make_pair(name, robot(name)));
-}
-
-void game::print_all() const {
-	for (auto elem : robots)
-	{
-		cout << elem.first << " : " << "total distance travelled: " << elem.second.travelled() <<
-			" current distance north: " << elem.second.north() << " current distance east: " << elem.second.east() <<
-			" distance from origin: " << distance(elem.second) << '\n';
-	}
-	
-}
 
 // returns the total number of robots in the map
 int game::num_robots() const {
@@ -60,8 +44,6 @@ void game::move(const string &name, int dir) {
 	else {
 		robot newRobot(name);
 		robots.emplace(name, newRobot); // store the new robot in the map using the name as the key and the robot object as the value
-		// for testing
-		cout << "New robot " << name << " created" << '\n';
 		// move the new robot after it has been created
 		move(name, dir);
 	}

@@ -12,9 +12,6 @@
 class game {
 public:
 	explicit game();
-	// for testing
-	void add_robot(std::string name);
-	void print_all() const;
 
 	int num_robots() const;
 	void move(const std::string &name, int dir);
