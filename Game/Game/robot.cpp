@@ -1,11 +1,12 @@
 #include "robot.h"
 #include <string>
-#include <vector>
 #include <cstdlib>
+// for testing
+#include <iostream>
 using namespace std;
 
 
-// origin
+// origin for each robot, which is 0,0
 const int originX = 0;
 const int originY = 0;
 
@@ -18,28 +19,35 @@ int travelledCounter = 0;
 
 // constructor
 robot::robot(const string &n) : n(n) {
-
 };
 
 
 void robot::move_north() {
 	y += 1;
 	++travelledCounter;
+	// for testing
+	cout << name() << " " << "moved north \n";
 }
 
 void robot::move_east() {
 	x += 1;
 	++travelledCounter;
+	// for testing
+	cout << name() << " " << "moved east \n";
 }
 
 void robot::move_south() {
 	y -= 1;
 	++travelledCounter;
+	// for testing
+	cout << name() << " " << "moved south \n";
 }
 
 void robot::move_west() {
 	x -= 1;
 	++travelledCounter;
+	// for testing
+	cout << name() << " " << "moved west \n";
 }
 
 int robot::north() const {

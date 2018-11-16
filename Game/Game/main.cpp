@@ -1,4 +1,5 @@
 #include "robot.h"
+#include "game.h"
 #include <iostream>
 
 using namespace std;
@@ -34,14 +35,32 @@ int main() {
 	cout << "Robot name: " << r.name() << '\n';
 	*/
 
-	
+	/*
 	robot r("Robbie");
 	r.move_north();
 	r.move_east();
 	r.move_south();
 	r.move_south();
 	cout << r.north() << "N, " << r.east() << "E, dist = " << distance(r) << '\n';
+	*/
 
+	// teating for game.cpp
+
+	game g;
+	g.add_robot("robot1");
+
+	cout << "Number of robots before move: " << g.num_robots() << '\n';
+
+	g.move("robot1", 0); // move north
+	g.move("robot1", 2); // move south
+	
+	// move a robot that doesn't exist yet
+	g.add_robot("robot2");
+	g.move("robot2", 0);
+
+	cout << "Number of robots after move: " << g.num_robots() << '\n';
+
+	g.print_all();
 
 	return 0;
 }
